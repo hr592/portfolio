@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hetvi Raj | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="logo">Hetvi Raj</div>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+  </div>
+</nav>
+
+<section id="home" class="hero">
+  <h1>Hetvi Raj</h1>
+  <h3>I am a biomedical engineering student at the University of Waterloo. I am passionate and interested in product/technology design, embedded systems, artificial intelligence & machine learning and interactions between machines and humans. I’m looking forward to working together to build technologies that create real-world impact.</h3>
+  <p class="hero-internship">I am currently looking for 2026 Summer (May-August) Internships.</p>
+  <canvas id="particle-canvas"></canvas>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="filters">
+    <button onclick="filterProjects('all')">All</button>
+    <button onclick="filterProjects('Robotics')">Robotics</button>
+    <button onclick="filterProjects('CAD')">CAD / SolidWorks</button>
+    <button onclick="filterProjects('Java')">Java / Programming</button>
+    <button onclick="filterProjects('PCB')">PCB / Electronics</button>
+    <button onclick="filterProjects('UI')">UI / Design</button>
+  </div>
+  <div id="project-list"></div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="experience-grid">
+    <div class="experience-card">
+      <h3>Fire Safety Plan Designer</h3>
+      <p>Created evacuation/fire safety plans with guidance from professionals using design software.</p>
+    </div>
+    <div class="experience-card">
+      <h3>Art Small Business Owner</h3>
+      <p>Selling custom paintings and resin art while managing clients and pricing.</p>
+    </div>
+    <div class="experience-card">
+      <h3>HOSA Forensic Science Trainer / Competition Winner</h3>
+      <p>Developed and delivered forensic science training sessions.</p>
+    </div>
+    <div class="experience-card">
+      <h3>Karate Senior Belt / Mentor</h3>
+      <p>Mentored new students and competed nationally at high levels for 5 years.</p>
+    </div>
+    <div class="experience-card">
+      <h3>DECA Secretary / Competition Winner</h3>
+      <p>Led initiatives and management of over 200 students and achieved competition success.</p>
+    </div>
+    <div class="experience-card">
+      <h3>Volunteer at Doctor’s Office</h3>
+      <p>Assisted in office work and gained medical exposure.</p>
+    </div>
+    <div class="experience-card">
+      <h3>Relay for Life Logistics Director</h3>
+      <p>Organized a school-wide (~1000 students) cancer fundraising event, raising over $17,000 dollars.</p>
+    </div>
+    <div class="experience-card">
+      <h3>FLA Marketing Manager</h3>
+      <p>Managed communications and promotions for events related to financial literacy.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+Hetvi Raj</p>
+  <p>Email: hetviraj05@gmail.com | LinkedIn: linkedin.com/in/hetviraj</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
