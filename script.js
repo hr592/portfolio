@@ -83,9 +83,11 @@ window.addEventListener('resize', () => {
 let particles = [];
 
 document.addEventListener('mousemove', (e) => {
+  const rect = canvas.getBoundingClientRect();
+
   particles.push({
-    x: e.clientX,
-    y: e.clientY,
+    x: e.clientX - rect.left,
+    y: e.clientY - rect.top,
     size: Math.random() * 4 + 2,
     life: 60
   });
