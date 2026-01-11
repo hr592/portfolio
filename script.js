@@ -72,24 +72,23 @@ renderProjects(projects);
 const canvas = document.getElementById('particle-canvas');
 const ctx = canvas.getContext('2d');
 
-const hero = document.querySelector('.hero');
+let particles = [];
 
-// Beginner-friendly canvas sizing fix
+// Resize canvas to full window
 function resizeCanvas() {
-  canvas.width = hero.clientWidth;   // matches hero width
-  canvas.height = hero.clientHeight; // matches hero height
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
 
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
-let particles = [];
-
-// Add particles on mouse move
-hero.addEventListener('mousemove', (e) => {
+// Track mouse anywhere on page
+document.body.addEventListener('mousemove', (e) => {
+  const rect = canvas.getBoundingClientRect();
   particles.push({
-    x: e.offsetX,
-    y: e.offsetY,
+    x: e.clientX - rect.left,
+    y: e.clientY - rect.top,
     size: Math.random() * 4 + 2,
     life: 60
   });
@@ -107,7 +106,7 @@ function animateParticles() {
     ctx.fill();
 
     p.life--;
-    p.y -= 0.3; // particles float upwards
+    p.y -= 0.3; // float upwards
     if (p.life <= 0) {
       particles.splice(i, 1);
       i--;
