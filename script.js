@@ -72,13 +72,13 @@ renderProjects(projects);
 const canvas = document.getElementById('particle-canvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
 
-window.addEventListener('resize', () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
 
 let particles = [];
 
