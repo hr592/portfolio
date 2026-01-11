@@ -24,7 +24,7 @@ const projects = [
     title: "NASA Healthy Living in Space Global Design Challenge",
     description: "Designed a sustainable agriculture module for a space settlement, focusing on efficient food production, infrastructure and life-support systems.",
     skills: ["Engineering", "Sustainable Design", "CAD", "Problem Solving", "Research"],
-    link: "projects/nasa-challenge/index.html",
+    link: "https://docs.google.com/document/d/1XwqRRzBdbUdwB_-pIAIF82OEw0ODrDl0tsZ3ZfNI-5g/edit?usp=sharing",
     image: "images/nasa.png"
   },
   {
