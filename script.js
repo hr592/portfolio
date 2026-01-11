@@ -3,7 +3,7 @@ const projects = [
     title: "Robotic Hand Dexterity Game System",
     description: "Designed and prototyped a 3-DOF robotic arm to enable accessible gameplay of a board game for individuals with Multiple Sclerosis (MS) by applying human-centred engineering to reduce dependence on fine motor control.",
     skills: ["User-Centered Design", "Robotics", "Arduino", "Circuit Design", "Mechanical Design", "CAD", "Iterative Prototyping", "Testing"],
-    link: "projects/robotic-arm/index.html",
+    link: "https://docs.google.com/document/d/1ttZQP6sHqXK6con2ng9tKnrHsVZSTOUxWLxn9s3xRuw/edit?usp=sharing",
     image: "images/robot.png"
   },
   {
