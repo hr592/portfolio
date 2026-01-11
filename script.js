@@ -82,12 +82,12 @@ window.addEventListener('resize', resizeCanvas);
 
 let particles = [];
 
-document.addEventListener('mousemove', (e) => {
-  const rect = canvas.getBoundingClientRect();
+const hero = document.querySelector('.hero');
 
+hero.addEventListener('mousemove', (e) => {
   particles.push({
-    x: e.clientX - rect.left,
-    y: e.clientY - rect.top,
+    x: e.offsetX,
+    y: e.offsetY,
     size: Math.random() * 4 + 2,
     life: 60
   });
