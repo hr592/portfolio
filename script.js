@@ -7,18 +7,25 @@ const projects = [
     image: "images/robot.png"
   },
   {
-    title: "N-1 Starfighter (SolidWorks CAD Project)",
-    description: "Multi-part assembly mechanical model built and assembled using SolidWorks.",
-    skills: ["SolidWorks", "Parametric Modelling", "Assemblies", "Mechanical Design", "CAD"],
-    link: "projects/cad/index.html",
-    image: "images/cad.png"
-  },
-  {
     title: "Custom PCB Design (Altium)",
     description: "End-to-end electrical design from schematic to manufacturable board.",
     skills: ["PCB Design", "Altium", "Custom Footprints", "Electronics", "Hardware Engineering", "Manufacturing Constraints"],
-    link: "projects/nasa/index.html",
+    link: "https://drive.google.com/drive/folders/1ETs00NofmW0uUmmeFeFYMFcEIPt1aP_4?usp=sharing",
     image: "images/pcb.png"
+  },
+  {
+    title: "N-1 Starfighter (SolidWorks CAD Project)",
+    description: "Multi-part assembly mechanical model built and assembled using SolidWorks.",
+    skills: ["SolidWorks", "Parametric Modelling", "Assemblies", "Mechanical Design", "CAD"],
+    link: "https://drive.google.com/drive/folders/1RSs-sbuL5THmyND1qptTNhTPT7Qzajql?usp=sharing",
+    image: "images/cad.png"
+  },
+  {
+    title: "Electric Car Motor Design",
+    description: "A hands-on project exploring electromagnetic motor design through iterative testing.",
+    skills: ["Testing", "Motor Physics", "Prototyping", "Torque", "Mechanical Design"],
+    link: "https://drive.google.com/drive/folders/1KFGzTcbMczFnXOCSCN7Fbo4WjBmrLKaC?usp=sharing",
+    image: "images/cad.png"
   },
   {
     title: "NASA Healthy Living in Space Global Design Challenge",
@@ -31,7 +38,7 @@ const projects = [
     title: "Pac-Man Fusion Game",
     description: "Java GUI game with event-driven logic and animations.",
     skills: ["Java", "Object-Oriented Programming", "UI"],
-    link: "projects/pacman/index.html",
+    link: "https://drive.google.com/drive/folders/1F0DQf5dQngZNKLnCOiTmXZryPrC6jK3w?usp=sharing",
     image: "images/pacman.png"
   }
 ];
