@@ -25,7 +25,7 @@ const projects = [
     description: "A hands-on project exploring electromagnetic motor design through iterative testing.",
     skills: ["Testing", "Motor Physics", "Prototyping", "Torque", "Mechanical Design"],
     link: "https://drive.google.com/drive/folders/1KFGzTcbMczFnXOCSCN7Fbo4WjBmrLKaC?usp=sharing",
-    image: "images/cad.png"
+    image: "images/car.png"
   },
   {
     title: "NASA Healthy Living in Space Global Design Challenge",
