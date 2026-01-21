@@ -3,7 +3,7 @@ const projects = [
     title: "Robotic Hand Dexterity Game System",
     description: "Designed and prototyped a 3-DOF robotic arm to enable accessible gameplay of a board game for individuals with Multiple Sclerosis (MS) by applying human-centred engineering to reduce dependence on fine motor control.",
     skills: ["User-Centered Design", "Robotics", "Arduino", "Circuit Design", "Mechanical Design", "CAD", "Iterative Prototyping", "Testing"],
-    link: "https://docs.google.com/document/d/1ttZQP6sHqXK6con2ng9tKnrHsVZSTOUxWLxn9s3xRuw/edit?usp=sharing",
+    link: "https://drive.google.com/drive/folders/1c2OucIDyZ8QdvPIsnt0ghq4Nz7nzBmep?usp=sharing",
     image: "images/robot.png"
   },
   {
@@ -31,7 +31,7 @@ const projects = [
     title: "NASA Healthy Living in Space Global Design Challenge",
     description: "Designed a sustainable agriculture module for a space settlement, focusing on efficient food production, infrastructure and life-support systems.",
     skills: ["Engineering", "Sustainable Design", "CAD", "Problem Solving", "Research"],
-    link: "https://docs.google.com/document/d/1XwqRRzBdbUdwB_-pIAIF82OEw0ODrDl0tsZ3ZfNI-5g/edit?usp=sharing",
+    link: "https://drive.google.com/file/d/1DFxo42EmjfqYfuZOQmXobNqe21GexxP2/view?usp=sharing",
     image: "images/nasa.png"
   },
   {
