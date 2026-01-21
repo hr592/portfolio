@@ -38,7 +38,7 @@ const projects = [
     title: "NBA Free-Throw Statistical Analysis",
     description: "Analyzed multi-season NBA datasets to investigate differences in free-throw success rates between home and away teams. Applied formal hypothesis testing, confidence intervals and significance tests.",
     skills: ["Data Analysis", "Excel", "Research", "Problem Solving", "Report"],
-    link: "https://drive.google.com/drive/folders/1hCylRNI-vj174PerRzs1xxl47XO632Lf?usp=sharing",
+    link: "https://drive.google.com/file/d/1VSzkHAnTBKPQ_wg6HLyDAvmhhHRgd7br/view?usp=sharing",
     image: "images/nba.png"
   },
   {
