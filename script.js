@@ -45,7 +45,7 @@ const projects = [
     title: "Pac-Man Fusion Game",
     description: "Java GUI game with event-driven logic and animations.",
     skills: ["Java", "Object-Oriented Programming", "UI"],
-    link: "https://drive.google.com/drive/folders/1F0DQf5dQngZNKLnCOiTmXZryPrC6jK3w?usp=sharing",
+    link: "https://drive.google.com/drive/folders/1j2O2Z25yViaNvOWkakR_tGVjphPne2fz?usp=sharing",
     image: "images/pacman.png"
   }
 ];
