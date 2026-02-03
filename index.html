@@ -5,6 +5,7 @@
 <title>Hetvi Raj | Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -17,7 +18,7 @@
   </div>
 </nav>
 
-<section id="home" class="hero">
+<section id="home" class="hero" data-aos="fade-up">
   <canvas id="particle-canvas"></canvas>
 
   <h1>Hi, I'm Hetvi Raj</h1>
@@ -25,7 +26,7 @@
   <p class="hero-internship">I am currently looking for 2026 Summer (May-August) Internships.</p>
 </section>
 
-<section id="projects">
+<section id="projects" data-aos="fade-up">
   <h2>Projects</h2>
   <div class="filters">
     <button onclick="filterProjects('all')">All</button>
@@ -38,7 +39,7 @@
   <div id="project-list"></div>
 </section>
 
-<section id="experience">
+<section id="experience" data-aos="fade-up">
   <h2>Experience</h2>
   <div class="experience-grid">
     <div class="experience-card">
@@ -82,5 +83,13 @@
 </footer>
 
 <script src="script.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 900,
+    once: true
+  });
+</script>
 </body>
 </html>
