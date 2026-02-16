@@ -1,35 +1,31 @@
 body {
   margin: 0;
-  font-family: "Inter", system-ui, sans-serif;
-  background: #0a1f2c;
-  color: white;
+  font-family: "DM Sans", system-ui, sans-serif;
+  background: #f2ebd0;
+  color: #2aa8a2;
 }
-
 nav {
   display: flex;
   justify-content: space-between;
   padding: 25px 50px;
-  background: #071821;
+  background: #ece4c6;
 }
-
 .logo {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   font-weight: 700;
-  color: #7fffd4;
+  color: #3bc7c0;
   font-size: 24px;
 }
-
 nav a {
-  color: #7fffd4;
+  color: #3bc7c0;
   text-decoration: none;
   margin-left: 25px;
   font-weight: 500;
 }
-
 .hero {
   position: relative;
   min-height: 80vh;
-  background: linear-gradient(120deg, #0a1f2c, #0f3d3e);
+  background: linear-gradient(120deg, #f2ebd0, #e8e0c4);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,134 +33,123 @@ nav a {
   overflow: hidden;
   cursor: default;
 }
-
 .hero h1 {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 80px;
   margin: 0;
-  color: #7fffd4;
+  color: #3bc7c0;
 }
-
 .hero h3 {
-  font-family: 'Raleway', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 24px;
   font-weight: 400;
   margin-top: 10px;
+  color: #2aa8a2;
 }
-
 .hero-internship {
-  font-family: 'Raleway', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 20px;
   font-weight: 500;
-  color: #00fff0;
-  background: rgba(0, 255, 240, 0.1);
-  border: 2px solid #00fff0;
+  color: #5ee6df;
+  background: rgba(94, 230, 223, 0.12);
+  border: 2px solid #5ee6df;
   border-radius: 12px;
   padding: 15px 25px;
   display: inline-block;
   margin-top: 20px;
   text-align: center;
-  box-shadow: 0 0 15px rgba(0,255,240,0.4);
+  box-shadow: 0 0 15px rgba(94, 230, 223, 0.25);
 }
-
 .hero p:last-of-type {
-  font-size: 20px;             
+  font-size: 20px;
   font-weight: 500;
-  color: #00fff0;              
-  background: rgba(0, 255, 240, 0.1); /* translucent background */
-  border: 2px solid #00fff0;  
-  border-radius: 12px;         
-  padding: 15px 25px;          
-  display: inline-block;        
-  margin-top: 20px;            
-  text-align: center;           
-  box-shadow: 0 0 15px rgba(0,255,240,0.4); 
+  color: #5ee6df;
+  background: rgba(94, 230, 223, 0.12);
+  border: 2px solid #5ee6df;
+  border-radius: 12px;
+  padding: 15px 25px;
+  display: inline-block;
+  margin-top: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(94, 230, 223, 0.25);
 }
-
 section {
   padding: 80px;
 }
-
 .filters button {
   background: none;
-  border: 1px solid #7fffd4;
-  color: #7fffd4;
+  border: 1px solid #3bc7c0;
+  color: #3bc7c0;
   padding: 10px 20px;
   margin: 10px;
   border-radius: 30px;
   cursor: pointer;
+  font-family: "DM Sans", sans-serif;
 }
-
 .filters button:hover {
-  background: #7fffd4;
-  color: black;
+  background: #3bc7c0;
+  color: #f2ebd0;
 }
-
 #project-list {
   display: flex;
   flex-direction: column;
   gap: 40px;
   margin-top: 40px;
 }
-
 .project-card {
   display: flex;
   gap: 30px;
-  background: #112f3c;
+  background: #ece4c6;
   padding: 30px;
   border-radius: 20px;
   transition: 0.3s;
   cursor: pointer;
 }
-
 .project-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0,255,200,0.2);
+  box-shadow: 0 15px 40px rgba(59, 199, 192, 0.2);
 }
-
 .project-img {
   width: 280px;
   height: 180px;
   object-fit: cover;
   border-radius: 12px;
 }
-
 .project-card:hover img {
   transform: scale(1.05);
 }
-
 .project-img {
   transition: 0.4s ease;
 }
-
 .project-info h3 {
-  font-family: "Space Grotesk", sans-serif;
-  color: #7fffd4;
+  font-family: "Cormorant Garamond", serif;
+  color: #3bc7c0;
   font-size: 26px;
   margin-top: 0;
 }
-
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
-
 .experience-card {
-  background: #112f3c;
+  background: #ece4c6;
   padding: 30px;
   border-radius: 15px;
   text-align: center;
   font-weight: 600;
+  color: #2aa8a2;
 }
-
+.experience-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  color: #3bc7c0;
+}
 footer {
   text-align: center;
   padding: 40px;
-  background: #071821;
-  color: #7fffd4;
+  background: #ece4c6;
+  color: #3bc7c0;
 }
-
 #particle-canvas {
   position: absolute;
   inset: 0;
@@ -173,7 +158,6 @@ footer {
   pointer-events: none;
   z-index: 0;
 }
-
 .hero h1,
 .hero h3,
 .hero p {
