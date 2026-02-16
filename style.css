@@ -1,23 +1,23 @@
 body {
   margin: 0;
-  font-family: "DM Sans", system-ui, sans-serif;
-  background: #f2ebd0;
-  color: #2aa8a2;
+  font-family: "Cabinet Grotesk", system-ui, sans-serif;
+  background: #0f1c2e;
+  color: #a8d5d1;
 }
 nav {
   display: flex;
   justify-content: space-between;
   padding: 25px 50px;
-  background: #ece4c6;
+  background: #162438;
 }
 .logo {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Clash Display", sans-serif;
   font-weight: 700;
-  color: #3bc7c0;
+  color: #4a9e97;
   font-size: 24px;
 }
 nav a {
-  color: #3bc7c0;
+  color: #4a9e97;
   text-decoration: none;
   margin-left: 25px;
   font-weight: 500;
@@ -25,7 +25,7 @@ nav a {
 .hero {
   position: relative;
   min-height: 80vh;
-  background: linear-gradient(120deg, #f2ebd0, #e8e0c4);
+  background: linear-gradient(120deg, #0f1c2e, #0e2a3a);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,61 +34,61 @@ nav a {
   cursor: default;
 }
 .hero h1 {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Clash Display", sans-serif;
   font-size: 80px;
   margin: 0;
-  color: #3bc7c0;
+  color: #4a9e97;
 }
 .hero h3 {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Cabinet Grotesk", sans-serif;
   font-size: 24px;
   font-weight: 400;
   margin-top: 10px;
-  color: #2aa8a2;
+  color: #a8d5d1;
 }
 .hero-internship {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Cabinet Grotesk", sans-serif;
   font-size: 20px;
   font-weight: 500;
-  color: #5ee6df;
-  background: rgba(94, 230, 223, 0.12);
-  border: 2px solid #5ee6df;
+  color: #a8d5d1;
+  background: rgba(74, 158, 151, 0.12);
+  border: 2px solid #4a9e97;
   border-radius: 12px;
   padding: 15px 25px;
   display: inline-block;
   margin-top: 20px;
   text-align: center;
-  box-shadow: 0 0 15px rgba(94, 230, 223, 0.25);
+  box-shadow: 0 0 15px rgba(74, 158, 151, 0.25);
 }
 .hero p:last-of-type {
   font-size: 20px;
   font-weight: 500;
-  color: #5ee6df;
-  background: rgba(94, 230, 223, 0.12);
-  border: 2px solid #5ee6df;
+  color: #a8d5d1;
+  background: rgba(74, 158, 151, 0.12);
+  border: 2px solid #4a9e97;
   border-radius: 12px;
   padding: 15px 25px;
   display: inline-block;
   margin-top: 20px;
   text-align: center;
-  box-shadow: 0 0 15px rgba(94, 230, 223, 0.25);
+  box-shadow: 0 0 15px rgba(74, 158, 151, 0.25);
 }
 section {
   padding: 80px;
 }
 .filters button {
   background: none;
-  border: 1px solid #3bc7c0;
-  color: #3bc7c0;
+  border: 1px solid #4a9e97;
+  color: #4a9e97;
   padding: 10px 20px;
   margin: 10px;
   border-radius: 30px;
   cursor: pointer;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Cabinet Grotesk", sans-serif;
 }
 .filters button:hover {
-  background: #3bc7c0;
-  color: #f2ebd0;
+  background: #4a9e97;
+  color: #0f1c2e;
 }
 #project-list {
   display: flex;
@@ -99,7 +99,7 @@ section {
 .project-card {
   display: flex;
   gap: 30px;
-  background: #ece4c6;
+  background: #162438;
   padding: 30px;
   border-radius: 20px;
   transition: 0.3s;
@@ -122,8 +122,8 @@ section {
   transition: 0.4s ease;
 }
 .project-info h3 {
-  font-family: "Cormorant Garamond", serif;
-  color: #3bc7c0;
+  font-family: "Clash Display", sans-serif;
+  color: #4a9e97;
   font-size: 26px;
   margin-top: 0;
 }
@@ -133,22 +133,22 @@ section {
   gap: 30px;
 }
 .experience-card {
-  background: #ece4c6;
+  background: #162438;
   padding: 30px;
   border-radius: 15px;
   text-align: center;
   font-weight: 600;
-  color: #2aa8a2;
+  color: #a8d5d1;
 }
 .experience-card h3 {
-  font-family: "Cormorant Garamond", serif;
-  color: #3bc7c0;
+  font-family: "Clash Display", sans-serif;
+  color: #4a9e97;
 }
 footer {
   text-align: center;
   padding: 40px;
-  background: #ece4c6;
-  color: #3bc7c0;
+  background: #162438;
+  color: #4a9e97;
 }
 #particle-canvas {
   position: absolute;
