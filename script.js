@@ -3,7 +3,7 @@ const projects = [
     title: "PCB Component Selection AI Agent",
     description: "Built an AI agent that solves a real problem I ran into while designing PCBs. Finding and selecting components from DigiKey was tedious, hard to track and time-consuming. The agent takes a plain English component request, filters a parts database using Python, and uses an AI model to recommend the best match with reasoning. Users can approve or reject recommendations in a multi-turn loop where the AI remembers what was already rejected, then export a complete Altium-ready Bill of Materials as a CSV and Word document.",
     skills: ["Python", "Streamlit", "REST APIs", "LLM Integration", "Prompt Engineering", "pandas", "JSON", "python-docx", "Multi-turn Conversation Design"],
-    link: "https://docs.google.com/document/d/1IkqyIfdYo4ajM5ABuwNq3yPBnPKBBOoB/edit?usp=sharing&ouid=112571752252037725957&rtpof=true&sd=true",
+    link: "https://drive.google.com/file/d/17N3586yOBJW55wYQ26gfMMLtuoTONO4v/view?usp=sharing",
     image: "images/ai.png"
   },
   {
