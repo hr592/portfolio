@@ -25,7 +25,7 @@ nav a {
 .hero {
   position: relative;
   min-height: 80vh;
-  background: linear-gradient(120deg, #0f1c2e, #0e2a3a);
+  background: linear-gradient(120deg, #0f1c2e, #0a3d4a);
   display: flex;
   flex-direction: column;
   justify-content: center;
