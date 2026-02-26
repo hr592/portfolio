@@ -195,7 +195,7 @@ section, .hero {
   font-size: 18px;
   line-height: 1.7;
   color: var(--text-mid);
-  max-width: 900px;
+  max-width: 1000px;
   margin-bottom: 32px;
 }
 
