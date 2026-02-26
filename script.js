@@ -1,477 +1,163 @@
-/* css variables */
-:root {
-  --blue: #60a5fa;
-  --teal: #2dd4bf;
-  --pink: #f472b6;
-  --green: #34d399;
-  --purple: #a78bfa;
-  --text-dark: #1e293b;
-  --text-mid: #334155;
-  --text-light: #64748b;
+// project data //
+const projects = [
+  {
+    title: "PCB Component Selection AI Agent",
+    description: "Built an AI agent that solves a real problem I ran into while designing PCBs. Finding and selecting components from DigiKey was tedious, hard to track and time-consuming. The agent takes a plain English component request, filters a parts database using Python, and uses an AI model to recommend the best match with reasoning.",
+    skills: ["Python", "Streamlit", "REST APIs", "LLM Integration", "Prompt Engineering", "pandas", "JSON", "python-docx"],
+    link: "https://drive.google.com/file/d/17N3586yOBJW55wYQ26gfMMLtuoTONO4v/view?usp=sharing",
+    image: "images/ai.png"
+  },
+  {
+    title: "3-DOF Robotic Arm",
+    description: "Designed and prototyped a 3-DOF robotic arm to enable accessible gameplay of a board game for individuals with Multiple Sclerosis (MS) by applying human-centred engineering to reduce dependence on fine motor control.",
+    skills: ["User-Centered Design", "Robotics", "Arduino", "Circuit Design", "Mechanical Design", "CAD"],
+    link: "https://drive.google.com/drive/folders/1c2OucIDyZ8QdvPIsnt0ghq4Nz7nzBmep?usp=sharing",
+    image: "images/robot.png"
+  },
+  {
+    title: "Custom PCB Design (Altium)",
+    description: "End-to-end electrical design from schematic to manufacturable board.",
+    skills: ["PCB Design", "Altium", "Custom Footprints", "Electronics", "Hardware Engineering"],
+    link: "https://drive.google.com/drive/folders/1ETs00NofmW0uUmmeFeFYMFcEIPt1aP_4?usp=sharing",
+    image: "images/pcb.png"
+  },
+  {
+    title: "N-1 Starfighter (SolidWorks CAD Project)",
+    description: "Multi-part assembly mechanical model built and assembled using SolidWorks.",
+    skills: ["SolidWorks", "Parametric Modelling", "Assemblies", "Mechanical Design", "CAD"],
+    link: "https://drive.google.com/drive/folders/1RSs-sbuL5THmyND1qptTNhTPT7Qzajql?usp=sharing",
+    image: "images/cad.png"
+  },
+  {
+    title: "Electric Car Motor Design",
+    description: "A hands-on project exploring electromagnetic motor design through iterative testing.",
+    skills: ["Testing", "Motor Physics", "Prototyping", "Torque", "Mechanical Design"],
+    link: "https://drive.google.com/drive/folders/1KFGzTcbMczFnXOCSCN7Fbo4WjBmrLKaC?usp=sharing",
+    image: "images/car.png"
+  },
+  {
+    title: "NASA Healthy Living in Space Global Design Challenge",
+    description: "Designed a sustainable agriculture module for a space settlement, focusing on efficient food production, infrastructure and life-support systems.",
+    skills: ["Engineering", "Sustainable Design", "CAD", "Problem Solving", "Research"],
+    link: "https://drive.google.com/file/d/1DFxo42EmjfqYfuZOQmXobNqe21GexxP2/view?usp=sharing",
+    image: "images/nasa.png"
+  },
+  {
+    title: "NBA Free-Throw Statistical Analysis",
+    description: "Analyzed multi-season NBA datasets to investigate differences in free-throw success rates between home and away teams. Applied formal hypothesis testing, confidence intervals and significance tests.",
+    skills: ["Data Analysis", "Excel", "Research", "Problem Solving", "Report"],
+    link: "https://drive.google.com/file/d/1VSzkHAnTBKPQ_wg6HLyDAvmhhHRgd7br/view?usp=sharing",
+    image: "images/nba.png"
+  },
+  {
+    title: "Pac-Man Fusion Game",
+    description: "Java GUI game with event-driven logic and animations.",
+    skills: ["Java", "Object-Oriented Programming", "UI"],
+    link: "https://drive.google.com/drive/folders/1j2O2Z25yViaNvOWkakR_tGVjphPne2fz?usp=sharing",
+    image: "images/pacman.png"
+  }
+];
+
+// render projects //
+const list = document.getElementById("project-list");
+
+function renderProjects(data) {
+  list.innerHTML = "";
+  data.forEach((p, i) => {
+    const div = document.createElement("div");
+    div.className = "project-card";
+    div.style.animationDelay = `${i * 0.07}s`;
+    div.onclick = () => window.open(p.link, "_blank");
+    div.innerHTML = `
+      <img src="${p.image}" alt="${p.title}" class="project-img" onerror="this.style.display='none'">
+      <div class="project-info">
+        <h3>${p.title}</h3>
+        <p>${p.description}</p>
+        <div class="skills-wrap">${p.skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}</div>
+      </div>
+    `;
+    list.appendChild(div);
+  });
 }
 
-/* reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+// filter projects //
+function filterProjects(skill) {
+  document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  if (skill === "all") {
+    renderProjects(projects);
+    return;
+  }
+  const filtered = projects.filter(p =>
+    p.skills.some(s => s.toLowerCase().includes(skill.toLowerCase()))
+  );
+  renderProjects(filtered);
 }
 
-body {
-  font-family: "Cabinet Grotesk", system-ui, sans-serif;
-  background: #e8f0fe;
-  color: var(--text-dark);
-  min-height: 100vh;
-  overflow-x: hidden;
+// Render on load
+renderProjects(projects);
+
+// scroll fade in //
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
+
+// particle canvas //
+const canvas = document.getElementById('particle-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+const colors = [
+  'rgba(96, 165, 250,',
+  'rgba(45, 212, 191,',
+  'rgba(244, 114, 182,',
+  'rgba(167, 243, 208,',
+  'rgba(196, 181, 253,'
+];
+
+document.body.addEventListener('mousemove', (e) => {
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  particles.push({
+    x: e.clientX,
+    y: e.clientY,
+    size: Math.random() * 5 + 2,
+    life: 70,
+    color: color
+  });
+});
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = 0; i < particles.length; i++) {
+    let p = particles[i];
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size * (p.life / 70), 0, Math.PI * 2);
+    ctx.fillStyle = `${p.color}${(p.life / 70) * 0.6})`;
+    ctx.fill();
+
+    p.life--;
+    p.y -= 0.5;
+    p.x += (Math.random() - 0.5) * 0.5;
+
+    if (p.life <= 0) {
+      particles.splice(i, 1);
+      i--;
+    }
+  }
+
+  requestAnimationFrame(animateParticles);
 }
 
-/* animated gradient bg */
-.bg-gradient {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background: linear-gradient(135deg,
-    #dbeafe 0%,
-    #f0fdf4 20%,
-    #fdf2f8 40%,
-    #ede9fe 60%,
-    #ccfbf1 80%,
-    #dbeafe 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 12s ease infinite;
-}
-
-@keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* floating orbs */
-.orb {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.45;
-  z-index: 0;
-  animation: orbFloat 8s ease-in-out infinite;
-}
-.orb-1 { width: 500px; height: 500px; background: #bfdbfe; top: -100px; left: -100px; animation-delay: 0s; }
-.orb-2 { width: 400px; height: 400px; background: #fbcfe8; top: 30%; right: -80px; animation-delay: -3s; }
-.orb-3 { width: 350px; height: 350px; background: #a7f3d0; bottom: 10%; left: 20%; animation-delay: -5s; }
-.orb-4 { width: 300px; height: 300px; background: #ddd6fe; top: 60%; right: 25%; animation-delay: -2s; }
-
-@keyframes orbFloat {
-  0%, 100% { transform: translateY(0px) scale(1); }
-  50%       { transform: translateY(-30px) scale(1.05); }
-}
-
-/* particle canvas */
-#particle-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* nav */
-nav {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 14px 32px;
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 100px;
-  box-shadow: 0 4px 24px rgba(100, 120, 200, 0.12);
-  width: fit-content;
-  min-width: 480px;
-}
-
-.logo {
-  font-family: "Clash Display", sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  background: linear-gradient(135deg, var(--blue), var(--pink));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  white-space: nowrap;
-}
-
-.nav-links {
-  display: flex;
-  gap: 6px;
-}
-
-nav a {
-  color: var(--text-mid);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 14px;
-  padding: 7px 16px;
-  border-radius: 100px;
-  transition: all 0.25s;
-}
-
-nav a:hover {
-  background: rgba(255, 255, 255, 0.6);
-  color: var(--text-dark);
-}
-
-/* section z-index */
-section, .hero {
-  position: relative;
-  z-index: 2;
-}
-
-/* hero */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 140px 80px 80px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 100px;
-  padding: 6px 16px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-mid);
-  margin-bottom: 28px;
-  width: fit-content;
-}
-
-.hero-eyebrow span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--teal), var(--blue));
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50%       { transform: scale(1.3); opacity: 0.7; }
-}
-
-.hero h1 {
-  font-family: "Clash Display", sans-serif;
-  font-size: clamp(52px, 7vw, 88px);
-  font-weight: 700;
-  line-height: 1.05;
-  color: var(--text-dark);
-  margin-bottom: 24px;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, var(--blue) 0%, var(--teal) 40%, var(--pink) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-bio {
-  font-size: 18px;
-  line-height: 1.7;
-  color: var(--text-mid);
-  max-width: 640px;
-  margin-bottom: 32px;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 16px;
-  padding: 16px 24px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text-dark);
-  box-shadow: 0 4px 20px rgba(96, 165, 250, 0.15);
-}
-
-.badge-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--teal), var(--green));
-  flex-shrink: 0;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-/* section shared */
-#projects, #experience {
-  padding: 80px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-header {
-  margin-bottom: 40px;
-}
-
-.section-label {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, var(--blue), var(--teal));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 10px;
-}
-
-.section-header h2 {
-  font-family: "Clash Display", sans-serif;
-  font-size: 42px;
-  font-weight: 700;
-  color: var(--text-dark);
-}
-
-/* filter buttons */
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 36px;
-}
-
-.filters button {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  color: var(--text-mid);
-  padding: 9px 20px;
-  border-radius: 100px;
-  cursor: pointer;
-  font-family: "Cabinet Grotesk", sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  transition: all 0.25s;
-}
-
-.filters button:hover,
-.filters button.active {
-  background: rgba(255, 255, 255, 0.75);
-  color: var(--text-dark);
-  box-shadow: 0 4px 16px rgba(96, 165, 250, 0.2);
-  transform: translateY(-1px);
-}
-
-/* project cards */
-#project-list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.project-card {
-  display: flex;
-  gap: 28px;
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  box-shadow: 0 8px 32px rgba(80, 120, 200, 0.08);
-  padding: 28px;
-  border-radius: 24px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: cardIn 0.5s ease forwards;
-}
-
-.project-card:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 20px 48px rgba(80, 120, 200, 0.18);
-  background: rgba(255, 255, 255, 0.55);
-  border-color: rgba(255, 255, 255, 0.85);
-}
-
-@keyframes cardIn {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.project-img {
-  width: 260px;
-  height: 165px;
-  object-fit: cover;
-  border-radius: 16px;
-  flex-shrink: 0;
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-img {
-  transform: scale(1.04);
-}
-
-.project-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.project-info h3 {
-  font-family: "Clash Display", sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 10px;
-}
-
-.project-info p {
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--text-mid);
-  margin-bottom: 14px;
-}
-
-.skills-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-
-.skill-tag {
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 100px;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  color: var(--text-mid);
-}
-
-.skill-tag:nth-child(3n+1) { background: rgba(147, 197, 253, 0.25); border-color: rgba(147, 197, 253, 0.5); color: #1d4ed8; }
-.skill-tag:nth-child(3n+2) { background: rgba(167, 243, 208, 0.25); border-color: rgba(167, 243, 208, 0.5); color: #065f46; }
-.skill-tag:nth-child(3n)   { background: rgba(251, 207, 232, 0.25); border-color: rgba(251, 207, 232, 0.5); color: #9d174d; }
-
-/* experience cards */
-.experience-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.experience-card {
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  box-shadow: 0 8px 32px rgba(80, 120, 200, 0.08);
-  padding: 28px;
-  border-radius: 24px;
-  transition: all 0.3s ease;
-}
-
-.experience-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(80, 120, 200, 0.15);
-  background: rgba(255, 255, 255, 0.55);
-}
-
-.exp-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  margin-bottom: 14px;
-}
-
-.exp-icon.blue   { background: rgba(147, 197, 253, 0.3); }
-.exp-icon.pink   { background: rgba(251, 207, 232, 0.3); }
-.exp-icon.green  { background: rgba(167, 243, 208, 0.3); }
-.exp-icon.purple { background: rgba(196, 181, 253, 0.3); }
-
-.experience-card h3 {
-  font-family: "Clash Display", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 10px;
-}
-
-.experience-card p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-mid);
-}
-
-/* footer */
-footer {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 50px 40px;
-  margin: 40px 80px;
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  border-radius: 28px;
-  color: var(--text-mid);
-  font-size: 14px;
-  line-height: 2;
-  box-shadow: 0 8px 32px rgba(80, 120, 200, 0.08);
-}
-
-footer a {
-  text-decoration: none;
-  font-weight: 600;
-  background: linear-gradient(135deg, var(--blue), var(--teal));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* scroll fade in */
-.fade-section {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.fade-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* responsive */
-@media (max-width: 768px) {
-  nav { min-width: unset; width: 90%; padding: 12px 20px; }
-  .hero, #projects, #experience { padding: 100px 24px 60px; }
-  .project-card { flex-direction: column; }
-  .project-img { width: 100%; height: 200px; }
-  footer { margin: 20px 24px; }
-}
+animateParticles();
