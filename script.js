@@ -3,7 +3,7 @@ const projects = [
   {
     title: "PCB Component Selection AI Agent",
     description: "Built an AI agent that solves a real problem I ran into while designing PCBs. Finding and selecting components from DigiKey was tedious, hard to track and time-consuming. The agent takes a plain English component request, filters a parts database using Python, and uses an AI model to recommend the best match with reasoning.",
-    skills: ["Python", "Streamlit", "REST APIs", "LLM Integration", "Prompt Engineering", "pandas", "JSON", "python-docx"],
+    skills: ["Python", "Streamlit", "REST APIs", "LLM Integration", "Prompt Engineering", "pandas", "JSON", "python-docx", "AI"],
     link: "https://drive.google.com/file/d/17N3586yOBJW55wYQ26gfMMLtuoTONO4v/view?usp=sharing",
     image: "images/ai.png"
   },
@@ -38,7 +38,7 @@ const projects = [
   {
     title: "NASA Healthy Living in Space Global Design Challenge",
     description: "Designed a sustainable agriculture module for a space settlement, focusing on efficient food production, infrastructure and life-support systems.",
-    skills: ["Engineering", "Sustainable Design", "CAD", "Problem Solving", "Research"],
+    skills: ["Engineering", "Design", "CAD", "Problem Solving", "Research"],
     link: "https://drive.google.com/file/d/1DFxo42EmjfqYfuZOQmXobNqe21GexxP2/view?usp=sharing",
     image: "images/nasa.png"
   },
