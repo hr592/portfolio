@@ -294,6 +294,7 @@ section, .hero {
 .project-card {
   display: flex;
   gap: 28px;
+  position: relative;
   background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -313,6 +314,21 @@ section, .hero {
   box-shadow: 0 20px 48px rgba(80, 120, 200, 0.18);
   background: rgba(255, 255, 255, 0.55);
   border-color: rgba(255, 255, 255, 0.85);
+}
+
+.project-link-icon {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  color: var(--text-light);
+  opacity: 0.35;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:hover .project-link-icon {
+  opacity: 1;
+  transform: translate(2px, -2px);
 }
 
 @keyframes cardIn {
