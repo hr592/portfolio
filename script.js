@@ -1,6 +1,13 @@
 // project data //
 const projects = [
   {
+    title: "Explain My Way - Chrome Extension",
+    description: "Developed a Chrome extension that uses the Groq LLaMA API to explain highlighted web text in one of six different learning styles with an interactive quiz mode. Features a Node.js backend, ElevenLabs text-to-speech integration, a draggable popup UI and a persistent saved explanations board with search and notes.",
+    skills: ["JavaScript", "Node.js", "Chrome Extension", "Express", "REST APIs", "LLM Integration", "HTML/CSS", "Prompt Engineering", "AI"],
+    link: "https://github.com/hr729/explainmyway.git",
+    image: "images/emw.png"
+  },
+  {
     title: "PCB Component Selection AI Agent",
     description: "Built an AI agent that solves a real problem I ran into while designing PCBs. Finding and selecting components from DigiKey was tedious, hard to track and time-consuming. The agent takes a plain English component request, filters a parts database using Python, and uses an AI model to recommend the best match with reasoning.",
     skills: ["Python", "Streamlit", "REST APIs", "LLM Integration", "Prompt Engineering", "pandas", "JSON", "python-docx", "AI"],
