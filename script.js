@@ -3,21 +3,21 @@ const projects = [
   {
     title: "Explain My Way - Chrome Extension",
     description: "Developed a Chrome extension that uses the Groq LLaMA API to explain highlighted web text in one of six different learning styles with an interactive quiz mode. Features a Node.js backend, ElevenLabs text-to-speech integration, a draggable popup UI and a persistent saved explanations board with search and notes.",
-    skills: ["JavaScript", "Node.js", "Chrome Extension", "Express", "REST APIs", "LLM Integration", "HTML/CSS", "Prompt Engineering", "AI"],
+    skills: ["JavaScript", "Node.js", "Chrome Extension", "Express", "REST APIs", "LLM Integration", "HTML/CSS", "Prompt Engineering", "AI", "UI Design", "Programming"],
     link: "https://github.com/hr729/explainmyway.git",
     image: "images/emw.png"
   },
   {
     title: "PCB Component Selection AI Agent",
     description: "Built an AI agent that solves a real problem I ran into while designing PCBs. Finding and selecting components from DigiKey was tedious, hard to track and time-consuming. The agent takes a plain English component request, filters a parts database using Python, and uses an AI model to recommend the best match with reasoning.",
-    skills: ["Python", "Streamlit", "REST APIs", "LLM Integration", "Prompt Engineering", "pandas", "JSON", "python-docx", "AI"],
+    skills: ["Python", "Streamlit", "REST APIs", "LLM Integration", "Prompt Engineering", "pandas", "JSON", "python-docx", "AI", "Programming"],
     link: "https://drive.google.com/file/d/17N3586yOBJW55wYQ26gfMMLtuoTONO4v/view?usp=sharing",
     image: "images/ai.png"
   },
   {
     title: "3-DOF Robotic Arm",
     description: "Designed and prototyped a 3-DOF robotic arm to enable accessible gameplay of a board game for individuals with Multiple Sclerosis (MS) by applying human-centred engineering to reduce dependence on fine motor control.",
-    skills: ["User-Centered Design", "Robotics", "Arduino", "Circuit Design", "Mechanical Design", "CAD"],
+    skills: ["User-Centered Design", "Robotics", "Arduino", "Circuit Design", "Mechanical Design", "SolidWorks", "Programming", "CAD"],
     link: "https://drive.google.com/drive/folders/1c2OucIDyZ8QdvPIsnt0ghq4Nz7nzBmep?usp=sharing",
     image: "images/robot.png"
   },
