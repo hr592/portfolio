@@ -2,7 +2,7 @@
 const projects = [
   {
     title: "Explain My Way - Chrome Extension",
-    description: "Developed a Chrome extension that uses the Groq LLaMA API to explain highlighted web text in one of six different learning styles with an interactive quiz mode. Features a Node.js backend, ElevenLabs text-to-speech integration, a draggable popup UI and a persistent saved explanations board with search and notes.",
+    description: "Developed a Chrome extension that uses the Groq LLaMA API to explain highlighted web text in one of six different learning styles with an interactive quiz mode. Features a Node.js backend, ElevenLabs text-to-speech integration, a draggable popup UI and a persistent saved explanations board with search and notes. How it Works: https://youtu.be/lJGjerWRc44",
     skills: ["JavaScript", "Node.js", "Chrome Extension", "Express", "REST APIs", "LLM Integration", "HTML/CSS", "Prompt Engineering", "AI", "UI Design", "Programming"],
     link: "https://github.com/hr729/explainmyway.git",
     image: "images/emw.png"
