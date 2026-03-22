@@ -2,10 +2,11 @@
 const projects = [
   {
     title: "Explain My Way - Chrome Extension",
-    description: "Developed a Chrome extension that uses the Groq LLaMA API to explain highlighted web text in one of six different learning styles with an interactive quiz mode. Features a Node.js backend, ElevenLabs text-to-speech integration, a draggable popup UI and a persistent saved explanations board with search and notes. How it Works: https://youtu.be/lJGjerWRc44",
+    description: "Developed a Chrome extension that uses the Groq LLaMA API to explain highlighted web text in one of six different learning styles with an interactive quiz mode. Features a Node.js backend, ElevenLabs text-to-speech integration, a draggable popup UI and a persistent saved explanations board with search and notes.",
     skills: ["JavaScript", "Node.js", "Chrome Extension", "Express", "REST APIs", "LLM Integration", "HTML/CSS", "Prompt Engineering", "AI", "UI Design", "Programming"],
     link: "https://github.com/hr729/explainmyway.git",
-    image: "images/emw.png"
+    image: "images/emw.png",
+    video: "https://youtu.be/lJGjerWRc44"
   },
   {
     title: "PCB Component Selection AI Agent",
@@ -87,6 +88,7 @@ function renderProjects(data) {
       <div class="project-info">
         <h3>${p.title}</h3>
         <p>${p.description}</p>
+        ${p.video ? `<a href="${p.video}" target="_blank" onclick="event.stopPropagation()" class="video-btn">▶ Watch Demo</a>` : ''}
         <div class="skills-wrap">${p.skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}</div>
       </div>
     `;
